@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title> Crime in the US </title>
+	<link rel="stylesheet" href="styles/styles.css">
+	<script src="https://code.highcharts.com/highcharts.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Manuale|Raleway" rel="stylesheet">
+
+	</head>
+
+	<body>
+		<h3>By: Elena Castello</h3>
+
+<h1>Crime in the United States: An Analysis of Age</h1>
+
+		<div id="container"></div>
+		<script>
+		Highcharts.chart('container', {
+		  chart: {
+		    type: 'bar'
+		  },
+		  title: {
+		    text: 'Crime in the US by Age, 2016'
+		  },
+		  subtitle: {
+		    text: 'Source: FBI'
+		  },
+		  xAxis: {
+		    categories: [
+		      'Murder and manslaughter',
+		      'Rape',
+		      'Robbery',
+		      'Aggravated assault',
+		      'Burglary',
+		      'Larceny-theft',
+		      'Motor vehicle theft',
+		      'Arson',
+		      'Other assaults',
+		      'Forgery and counterfeiting',
+		      'Fraud',
+		      'Embezzlement',
+		      'Stolen property',
+		      'Vandalism',
+		      'Weapons; carrying, possessing',
+		      'Prostitution',
+		      'Sex offenses (not rape and prostitution)',
+		      'Drug abuse violations',
+		      'Gambling',
+		      'Offenses against the family/children',
+		      'DUI',
+		      'Liquor laws',
+		      'Drunkenness',
+		      'Disorderly conduct',
+		      'Vagrancy',
+		      'All other offenses (except traffic)',
+		      'Suspicion',
+		      'Curfew and loitering law violations'
+		    ],
+		    title: {
+		      text: null
+		    }
+		  },
+		  yAxis: {
+		    min: 0,
+		    title: {
+		      text: 'Total Arrests',
+		      align: 'high'
+		    },
+		    labels: {
+		      overflow: 'justify'
+		    }
+		  },
+		  tooltip: {
+		    valueSuffix: ' Arrests'
+		  },
+		  plotOptions: {
+		    bar: {
+		      dataLabels: {
+		        enabled: true
+		      }
+		    }
+		  },
+		  legend: {
+		    layout: 'vertical',
+		    align: 'right',
+		    verticalAlign: 'top',
+		    x: -40,
+		    y: 80,
+		    floating: true,
+		    borderWidth: 1,
+		    backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+		    shadow: true
+		  },
+		  credits: {
+		    enabled: false
+		  },
+		  series: [{
+		      name: 'Under 18',
+		      data: [682, 2952, 15339, 22362, 25513, 107287, 12520, 2030, 102694, 967, 3680, 540, 8679, 31181, 15452, 396, 6723, 78330, 203, 2738, 5135, 29073, 3805, 52315, 622, 123257, 74, 27152]
+
+		    }, {
+		      name: '18-29',
+		      data: [5096, 6868, 11964, 120726, 72552, 193278, 30250, 2333, 317653, 20781, 40658, 6482, 34404, 66214, 61050, 14367, 11936, 626791, 1127, 22732, 324257, 105747, 102676, 108950, 6118, 1049506, 171]
+		    }, {
+		      name: '30-39',
+		      data: [1940, 4173, 13140, 79482, 37573, 196707, 15913, 1582, 212241, 13306, 29512, 2842, 19017, 31822, 27028, 7780, 8265, 301837, 552, 25024, 206071, 16863, 73269, 59157, 4544, 706095, 84 ]
+		    }, {
+		      name: '40-49',
+		      data: [927, 2596, 5743, 45284, 18116, 110676, 6709, 909, 125690, 6338, 16644, 1682, 8567, 15366, 12182, 4608, 5848, 145885, 446, 12758, 132763, 14499, 57394, 36988, 3689, 391416, 62 ]
+			}, {
+		  		name:'50-59',
+		      data: [518, 1472, 2895, 28359, 9558, 67779, 2740, 713, 75749, 2929, 8776, 897, 3543, 8753, 6640, 2525, 4906, 80388,358, 5512, 98416, 14748, 48367, 27284, 3720, 240443, 45]
+		  }]
+
+		});
+
+</script>
+
+<article>
+
+<p>The chart above shows various different kinds of offenses committed in the United States last year, 2016. The bars show age ranges for the population, and the corresponding arrests can be compared and contrasted among the different age groups. It is important to be able to recognize trends in age and crime because when making laws, or trying to prevent future crimes from happening (especially among the youth). It can also show how societal changes affect crime; the economy, politics and even natural disasters affect crime rates. One interesting trend to observe is that 18-29 year olds seem to have the highest arrest rate, including crimes for drug abuse, DUIs and assaults. Data can be found at: <a href="https://ucr.fbi.gov/crime-in-the-u.s/2016/crime-in-the-u.s.-2016/resource-pages/downloads" target="_blank"> FBI: UCR Crime Rates</a></p>
+ </article>
+
+<h1> Crime in the United States: An analysis over the years</h1>
+<div id="line"></div>
+
+<script>
+Highcharts.chart('line', {
+    chart: {
+        type: 'spline'
+    },
+    title: {
+        text: 'Crime in the US 2012-2016'
+    },
+
+    xAxis: {
+        type: 'datetime',
+        dateTimeLabelFormats: { // don't display the dummy year
+
+         category: [2012, 2013, 2014, 2015, 2016]
+
+        },
+        title: {
+            text: 'Year'
+        }
+    },
+    yAxis: {
+        title: {
+            text: 'Offenses'
+        },
+        min: 0
+    },
+    tooltip: {
+        headerFormat: '<b>{series.name}</b><br>',
+        pointFormat: '{point.x:%e. %b}: {point.y:.2f} offenses'
+    },
+
+    plotOptions: {
+        spline: {
+            marker: {
+                enabled: true
+            }
+        }
+    },
+
+    series: [{
+        name: 'Murder',
+        // Define the data points. All series have a dummy year
+        // of 1970/71 in order to be compared on the same x axis. Note
+        // that in JavaScript, months start at 0 for January, 1 for February etc.
+        data: [
+            [Date.UTC(2012), 14856],
+            [Date.UTC(2013), 14319],
+            [Date.UTC(2014), 14164],
+            [Date.UTC(2015), 15583],
+            [Date.UTC(2016), 17250],
+        ]
+    }, {
+        name: 'Robbery',
+        data: [
+            [Date.UTC(2012), 355051],
+            [Date.UTC(2013), 345093],
+            [Date.UTC(2014), 322905],
+            [Date.UTC(2015), 328109],
+            [Date.UTC(2016), 332198],
+        ]
+    }, {
+        name: 'Burglary',
+        data: [
+            [Date.UTC(2012), 2109932],
+            [Date.UTC(2013), 1932139],
+            [Date.UTC(2014), 1713153],
+            [Date.UTC(2015), 1587564],
+            [Date.UTC(2016), 1515096],
+
+        ]
+        }, {
+         name: 'Motor vehicle theft',
+        data: [
+            [Date.UTC(2012), 723186],
+            [Date.UTC(2013), 700288],
+            [Date.UTC(2014), 686803],
+            [Date.UTC(2015), 713063],
+            [Date.UTC(2016), 765484],
+        ]
+
+    }]
+});
+</script>
+<article>
+<p>Like the first chart, the one above shows a combination of data relating crime in the US to another factor. In this case, we see crime plotted against year, and can observe the changes in various different categories of crime, such as murder, robbery, motor vehicle theft and burglary. While this does not show every type of offense, the categories include several other crimes that can be categorized within the general branch of these four. Looking at the chart, one can see interesting trends across the last several years. It’s important to see how crimes change; and like the chart above, many societal factors affect the reason for an increase or decrease in crime. Data can be found at: <a href="https://ucr.fbi.gov/crime-in-the-u.s/2016/crime-in-the-u.s.-2016/resource-pages/downloads" target="_blank"> FBI: UCR Crime Rates</a></p>
+</article>
+
+	</body>
+
+</html>
+
+
+  <!-- link for both charts>
